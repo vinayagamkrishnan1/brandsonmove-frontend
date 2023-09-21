@@ -1,0 +1,53 @@
+.Footer {
+    margin-top: auto;
+}
+
+.Footer {
+    .footer-navigation {
+        display: grid;
+        color: #4B0082;
+        font-family: Arial;
+        text-decoration: none;
+        background-image: url("../../../assets/images/footerbg.svg");
+        padding: max(1vh, 1rem) 1rem;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+        font-weight: 700;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        font-size: var(--font-xs);
+        .footer-navigation-item {
+
+            .footer-location-address, .footer-contact-info, .footer-contact-mail, .footer-share-options {
+                display: inline-flex;
+                padding: max(1vh, 0rem) 0.5rem;
+            }
+            .footer-about-teams {
+                padding-left: 6rem;
+            }
+            .footer-share-options {
+                text-align: center;
+            }
+
+            .footer-icons {
+                width: 40px;
+                padding-right: 15px;
+                align-self: flex-start;
+            }
+            .footer-links {
+                text-decoration: none !important;
+                color: #4B0082;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 540px) {
+    .footer-about-teams {
+        text-align: left !important;
+        padding-left: 3rem !important;
+    }
+    .footer-share-options, .only-home-page-content {
+        padding-left: 3rem !important;
+    }
+}

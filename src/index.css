@@ -1,3 +1,11 @@
+:root {
+  --font-xl: clamp(3rem, 5vw + 3.5rem, 4rem);
+  --font-lg: clamp(2rem, 5vw + 2.5rem, 3rem);
+  --font-md: clamp(1rem, 5vw + 1.1rem, 1.8rem);
+  --font-sm: clamp(0.8rem, 5vw + 1rem, 1.1rem);
+  --font-xs: clamp(0.8rem, 5vw + 0.9rem, 1rem);
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
