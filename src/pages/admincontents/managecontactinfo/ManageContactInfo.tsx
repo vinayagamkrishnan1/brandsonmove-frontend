@@ -1,10 +1,10 @@
-import '../css/admin.css';
-import React, { useEffect, useState } from 'react';
-import { useMutation, useQuery } from '@apollo/client';
-import { Q_GET_CONTACT_INFO, UPDATE_ONE } from '../../../graphql';
-import LoadingSpinner from '../../../components/common/loadingspinner/LoadingSpinner';
-import {isObjIsEmpty, showToast } from '../../../utils/utils';
-import { useForm } from 'react-hook-form';
+import "../css/admin.css";
+import React, { useEffect, useState } from "react";
+import { useMutation, useQuery } from "@apollo/client";
+import { Q_GET_CONTACT_INFO, UPDATE_ONE } from "../../../graphql";
+import LoadingSpinner from "../../../components/common/loadingspinner/LoadingSpinner";
+import {isObjIsEmpty, showToast } from "../../../utils/utils";
+import { useForm } from "react-hook-form";
 
 export default function ManageContactInfo() {
 
@@ -32,10 +32,10 @@ export default function ManageContactInfo() {
 
     const _updateContacts = (contacts: any) => {
         setShowForm(!showForm);
-        setValue('phone1', contactInfo?.phone1);
-        setValue('phone2', contactInfo?.phone2);
-        setValue('email', contactInfo?.email);
-        setValue('address', contactInfo?.address);
+        setValue("phone1", contactInfo?.phone1);
+        setValue("phone2", contactInfo?.phone2);
+        setValue("email", contactInfo?.email);
+        setValue("address", contactInfo?.address);
     }
 
     const onSubmit = async (data: any) => {
@@ -59,7 +59,7 @@ export default function ManageContactInfo() {
 
     return (
         <div>
-            <div className='switch-content-block'>
+            <div className="switch-content-block">
                 {showForm ? (
                     <i
                         className="bi bi-card-list list-icon"
@@ -75,7 +75,7 @@ export default function ManageContactInfo() {
                 ) }
             </div>
             {showForm ? (
-                <div className='dynamic-content-form'>
+                <div className="dynamic-content-form">
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="form-field">
                             <div className="label">Phone 1</div>
@@ -138,7 +138,7 @@ export default function ManageContactInfo() {
                             {false ? (
                                 <LoadingSpinner />
                             ) : (
-                                <button className="button-submit" type='submit'>
+                                <button className="button-submit" type="submit">
                                     Submit
                                 </button>
                             )}
@@ -148,39 +148,39 @@ export default function ManageContactInfo() {
             ) : (
                 <div>
                     {true ? (
-                        <div className='meetings-table'>
-                            <div className='row'>
-                                <div className='col meetings-content'>
+                        <div className="meetings-table">
+                            <div className="row">
+                                <div className="col meetings-content">
                                     <b>Phone</b>
                                 </div>
-                                <div className='col meetings-content'>
+                                <div className="col meetings-content">
                                     <b>Phone</b>
                                 </div>
-                                <div className='col meetings-content'>
+                                <div className="col meetings-content">
                                     <b>Email</b>
                                 </div>
-                                <div className='col meetings-content'>
+                                <div className="col meetings-content">
                                     <b>Address</b>
                                 </div>
-                                <div className='col meetings-content'>
+                                <div className="col meetings-content">
                                     <b>Option</b>
                                 </div>
                             </div>
                             { !isObjIsEmpty(contactInfo) &&
-                                <div className='row'>
-                                    <div className='col meetings-content'>
+                                <div className="row">
+                                    <div className="col meetings-content">
                                         {contactInfo?.phone1}
                                     </div>
-                                    <div className='col meetings-content'>
+                                    <div className="col meetings-content">
                                         {contactInfo?.phone2}
                                     </div>
-                                    <div className='col meetings-content'>
+                                    <div className="col meetings-content">
                                         {contactInfo?.email}
                                     </div>
-                                    <div className='col meetings-content'>
+                                    <div className="col meetings-content">
                                         {contactInfo?.address}
                                     </div>
-                                    <div className='col meetings-content'>
+                                    <div className="col meetings-content">
                                         <i
                                             className="bi bi-pen icon-edit"
                                             onClick={() => _updateContacts(contactInfo)}
@@ -191,7 +191,7 @@ export default function ManageContactInfo() {
                             }
                         </div>
                     ) : (
-                        <div className='page-loading-spinner-style'>
+                        <div className="page-loading-spinner-style">
                             <LoadingSpinner />
                         </div>
                     )}

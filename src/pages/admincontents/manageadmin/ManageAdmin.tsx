@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import { useMutation } from '@apollo/client';
-import { INSERT_ONE } from '../../../graphql';
-import { useForm } from 'react-hook-form';
-import 'react-toastify/dist/ReactToastify.css';
-import LoadingSpinner from '../../../components/common/loadingspinner/LoadingSpinner';
-import '../css/admin.css';
-import AdminList from './component/AdminList';
-import { showToast } from '../../../utils/utils';
+import "../css/admin.css";
+import React, { useState } from "react";
+import { useMutation } from "@apollo/client";
+import { INSERT_ONE } from "../../../graphql";
+import { useForm } from "react-hook-form";
+import "react-toastify/dist/ReactToastify.css";
+import LoadingSpinner from "../../../components/common/loadingspinner/LoadingSpinner";
+import AdminList from "./component/AdminList";
+import { showToast } from "../../../utils/utils";
 
 export default function ManageAdmin() {
 
@@ -34,7 +34,7 @@ export default function ManageAdmin() {
     
     return (
         <div>
-            <div className='switch-content-block'>
+            <div className="switch-content-block">
                 {showForm ? (
                     <i
                         className="bi bi-card-list list-icon"
@@ -50,7 +50,7 @@ export default function ManageAdmin() {
                 ) }
             </div>
             {showForm ? (
-                <div className='dynamic-content-form'>
+                <div className="dynamic-content-form">
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="form-field">
                             <div className="label">Name</div>
@@ -113,7 +113,7 @@ export default function ManageAdmin() {
                             {addingAdmin ? (
                                 <LoadingSpinner />
                             ) : (
-                                <button className="button-submit" type='submit'>
+                                <button className="button-submit" type="submit">
                                     Submit
                                 </button>
                             )}

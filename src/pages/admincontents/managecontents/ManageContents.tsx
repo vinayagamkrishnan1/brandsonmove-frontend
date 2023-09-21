@@ -1,12 +1,12 @@
-import React, { useState } from 'react';
-import { useMutation } from '@apollo/client';
-import { INSERT_ONE } from '../../../graphql';
-import { useForm } from 'react-hook-form';
-import 'react-toastify/dist/ReactToastify.css';
-import LoadingSpinner from '../../../components/common/loadingspinner/LoadingSpinner';
-import '../css/admin.css';
-import ContentList from './component/ContentList';
-import { showToast } from '../../../utils/utils';
+import "../css/admin.css";
+import React, { useState } from "react";
+import { useMutation } from "@apollo/client";
+import { INSERT_ONE } from "../../../graphql";
+import { useForm } from "react-hook-form";
+import "react-toastify/dist/ReactToastify.css";
+import LoadingSpinner from "../../../components/common/loadingspinner/LoadingSpinner";
+import ContentList from "./component/ContentList";
+import { showToast } from "../../../utils/utils";
 
 export default function ManageContents() {
 
@@ -31,7 +31,7 @@ export default function ManageContents() {
 
     return (
         <div>
-            <div className='switch-content-block'>
+            <div className="switch-content-block">
                 {showForm ? (
                     <i
                         className="bi bi-card-list list-icon"
@@ -47,7 +47,7 @@ export default function ManageContents() {
                 ) }
             </div>
             {showForm ? (
-                <div className='dynamic-content-form'>
+                <div className="dynamic-content-form">
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="form-field">
                             <div className="label">Heading 1</div>
@@ -125,7 +125,7 @@ export default function ManageContents() {
                             {addingContents ? (
                                 <LoadingSpinner />
                             ) : (
-                                <button className="button-submit" type='submit'>
+                                <button className="button-submit" type="submit">
                                     Submit
                                 </button>
                             )}

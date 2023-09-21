@@ -1,10 +1,10 @@
-import '../css/admin.css';
-import React, { useEffect, useState } from 'react';
-import { useMutation, useQuery, useSubscription } from '@apollo/client';
-import { GET_ALL_MEETING_SCHEDULE_SUB, GET_CONTENT, GET_MEETING_INFO, UPDATE_ONE } from '../../../graphql';
-import LoadingSpinner from '../../../components/common/loadingspinner/LoadingSpinner';
-import { sendMail } from '../../../services/EmailService';
-import { constructEmailInviteProperties, convertoDate, isAllTimeSlotsDeclined, isAnyOneTimeSlotInvited, isSameStatus, isTimeSlotAlreadyInvitedOrDeclined, showToast } from '../../../utils/utils';
+import "../css/admin.css";
+import React, { useEffect, useState } from "react";
+import { useMutation, useQuery, useSubscription } from "@apollo/client";
+import { GET_ALL_MEETING_SCHEDULE_SUB, GET_CONTENT, GET_MEETING_INFO, UPDATE_ONE } from "../../../graphql";
+import LoadingSpinner from "../../../components/common/loadingspinner/LoadingSpinner";
+import { sendMail } from "../../../services/EmailService";
+import { constructEmailInviteProperties, convertoDate, isAllTimeSlotsDeclined, isAnyOneTimeSlotInvited, isSameStatus, isTimeSlotAlreadyInvitedOrDeclined, showToast } from "../../../utils/utils";
 
 export default function ManageMeetings() {
 
@@ -305,36 +305,36 @@ export default function ManageMeetings() {
                 </select>
             </div>
             {(meetings && meetings?.length > 0 && !loading) ? (
-                <div className='meetings-table'>
-                    <div className='row'>
-                        <div className='col-2 meetings-content'>
+                <div className="meetings-table">
+                    <div className="row">
+                        <div className="col-2 meetings-content">
                             <b>Name</b>
                         </div>
-                        <div className='col-2 meetings-content'>
+                        <div className="col-2 meetings-content">
                             <b>Email</b>
                         </div>
-                        <div className='col-1 meetings-content'>
+                        <div className="col-1 meetings-content">
                             <b>Type</b>
                         </div>
-                        <div className='col-2 meetings-content'>
+                        <div className="col-2 meetings-content">
                             <b>Date and Time</b>
                         </div>
-                        <div className='col-3 meetings-content'>
+                        <div className="col-3 meetings-content">
                             <b>Options</b>
                         </div>
-                        <div className='col-2 meetings-content'>
+                        <div className="col-2 meetings-content">
                             <b>Complete</b>
                         </div>
                     </div>
                     {meetings.map((meeting: any, index: any) => (
-                        <div key={meeting?.id || index} className='row'>
-                            <div className='col-2 meetings-content'>
+                        <div key={meeting?.id || index} className="row">
+                            <div className="col-2 meetings-content">
                                 {meeting?.name}
                             </div>
-                            <div className='col-2 meetings-content'>
+                            <div className="col-2 meetings-content">
                                 {meeting?.email}
                             </div>
-                            <div className='col-1 meetings-content'>
+                            <div className="col-1 meetings-content">
                                 {
                                     meeting?.meeting_type == "googlemeet" &&
                                     <div>Google Meet</div>
@@ -348,7 +348,7 @@ export default function ManageMeetings() {
                                     <div>MS Teams</div>
                                 }
                             </div>
-                            <div className='col-2 meetings-content'>
+                            <div className="col-2 meetings-content">
                                 { meeting?.timeslot1 &&
                                     <div>
                                         {convertoDate(meeting?.timeslot1)}
@@ -365,14 +365,14 @@ export default function ManageMeetings() {
                                     </div>
                                 }
                             </div>
-                            <div className='col-3 meetings-content'>
+                            <div className="col-3 meetings-content">
                                 { meeting?.timeslot1 &&
                                     <div>
                                         { (meeting?.istimeslot1 && meeting?.isinvitingslot1) ? (
                                             <LoadingSpinner />
                                         ) : (
                                             <button
-                                                className={`${meeting?.timeslot1_is_accepted ? 'button-approved' : 'button-approve'}`}
+                                                className={`${meeting?.timeslot1_is_accepted ? "button-approved" : "button-approve"}`}
                                                 onClick={() => updateMeetingStatus(true, meeting, "slot1")}
                                             >
                                                 {meeting?.timeslot1_is_accepted ? "Invited" : "Invite"}
@@ -382,7 +382,7 @@ export default function ManageMeetings() {
                                             <LoadingSpinner />
                                         ) : (
                                             <button
-                                                className={`${meeting?.timeslot1_is_declined ? 'button-declined' : 'button-decline'}`}
+                                                className={`${meeting?.timeslot1_is_declined ? "button-declined" : "button-decline"}`}
                                                 onClick={() => updateMeetingStatus(false, meeting, "slot1")}
                                             >
                                                 {meeting?.timeslot1_is_declined ? "Declined" : "Decline"}
@@ -396,7 +396,7 @@ export default function ManageMeetings() {
                                             <LoadingSpinner />
                                         ): (
                                             <button
-                                                className={`${meeting?.timeslot2_is_accepted ? 'button-approved' : 'button-approve'}`}
+                                                className={`${meeting?.timeslot2_is_accepted ? "button-approved" : "button-approve"}`}
                                                 onClick={() => updateMeetingStatus(true, meeting, "slot2")}
                                             >
                                                 {meeting?.timeslot2_is_accepted ? "Invited" : "Invite"}
@@ -406,7 +406,7 @@ export default function ManageMeetings() {
                                             <LoadingSpinner />
                                         ) : (
                                             <button
-                                                className={`${meeting?.timeslot2_is_declined ? 'button-declined' : 'button-decline'}`}
+                                                className={`${meeting?.timeslot2_is_declined ? "button-declined" : "button-decline"}`}
                                                 onClick={() => updateMeetingStatus(false, meeting, "slot2")}
                                             >
                                                 {meeting?.timeslot2_is_declined ? "Declined" : "Decline"}
@@ -420,7 +420,7 @@ export default function ManageMeetings() {
                                             <LoadingSpinner />
                                         ): (
                                             <button
-                                                className={`${meeting?.timeslot3_is_accepted ? 'button-approved' : 'button-approve'}`}
+                                                className={`${meeting?.timeslot3_is_accepted ? "button-approved" : "button-approve"}`}
                                                 onClick={() => updateMeetingStatus(true, meeting, "slot3")}
                                             >
                                                 {meeting?.timeslot3_is_accepted ? "Invited" : "Invite"}
@@ -430,7 +430,7 @@ export default function ManageMeetings() {
                                             <LoadingSpinner />
                                         ) : (
                                             <button
-                                                className={`${meeting?.timeslot3_is_declined ? 'button-declined' : 'button-decline'}`}
+                                                className={`${meeting?.timeslot3_is_declined ? "button-declined" : "button-decline"}`}
                                                 onClick={() => updateMeetingStatus(false, meeting, "slot3")}
                                             >
                                                 {meeting?.timeslot3_is_declined ? "Declined" : "Decline"}
@@ -439,12 +439,12 @@ export default function ManageMeetings() {
                                     </div>
                                 }
                             </div>
-                            <div className='col-2 meetings-content'>
+                            <div className="col-2 meetings-content">
                                 { (meeting?.iscompleting) ? (
                                     <LoadingSpinner />
                                 ) : (
                                     <button
-                                        className={`${meeting?.is_meeting_completed ? 'button-completed' : 'button-complete'}`}
+                                        className={`${meeting?.is_meeting_completed ? "button-completed" : "button-complete"}`}
                                         onClick={() => completeMeetingAndUpdateStatus(meeting, "slot1")}
                                     >
                                         {meeting?.is_meeting_completed ? "Completed" : "Complete"}
@@ -455,7 +455,7 @@ export default function ManageMeetings() {
                     ))}
                 </div>
             ) : (
-                <div className='page-loading-spinner-style'>
+                <div className="page-loading-spinner-style">
                     <LoadingSpinner />
                 </div>
             ) }

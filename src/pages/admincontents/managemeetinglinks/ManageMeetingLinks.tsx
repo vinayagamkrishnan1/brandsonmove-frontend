@@ -1,11 +1,10 @@
-import React, { useState, useEffect } from 'react';
-import { useMutation, useSubscription } from '@apollo/client';
-import { GET_MEETING_LINKS_SUB, UPDATE_ONE } from '../../../graphql';
-import LoadingSpinner from '../../../components/common/loadingspinner/LoadingSpinner';
-import { toast } from 'react-toastify';
-
-import '../css/admin.css';
-import { useForm } from 'react-hook-form';
+import "../css/admin.css";
+import React, { useState, useEffect } from "react";
+import { useMutation, useSubscription } from "@apollo/client";
+import { GET_MEETING_LINKS_SUB, UPDATE_ONE } from "../../../graphql";
+import LoadingSpinner from "../../../components/common/loadingspinner/LoadingSpinner";
+import { toast } from "react-toastify";
+import { useForm } from "react-hook-form";
 
 export default function ManageMeetingLinks() {
 
@@ -83,7 +82,7 @@ export default function ManageMeetingLinks() {
     return (
         <div>
             {showEditForm && 
-                <div className='dynamic-content-form'>
+                <div className="dynamic-content-form">
                     <form onSubmit={handleSubmit(onSubmit)}>
                         <div className="form-field">
                             <div className="label">Link</div>
@@ -117,7 +116,7 @@ export default function ManageMeetingLinks() {
                             {updatingMeetingLink ? (
                                 <LoadingSpinner />
                             ) : (
-                                <button className="button-submit" type='submit'>
+                                <button className="button-submit" type="submit">
                                     Submit
                                 </button>
                             )}
@@ -127,27 +126,27 @@ export default function ManageMeetingLinks() {
             }
             <div>
                 {(meetingLinks && meetingLinks?.length > 0 && !loadingmeetinglinks) ? (
-                    <div className='meetings-table'>
-                        <div className='row'>
-                            <div className='col-6 meetings-content'>
+                    <div className="meetings-table">
+                        <div className="row">
+                            <div className="col-6 meetings-content">
                                 <b>Link</b>
                             </div>
-                            <div className='col meetings-content'>
+                            <div className="col meetings-content">
                                 <b>Passcode</b>
                             </div>
-                            <div className='col meetings-content'>
+                            <div className="col meetings-content">
                                 <b>Options</b>
                             </div>
                         </div>
                         {meetingLinks.map((link: any, index: any) => (
-                            <div key={link?.id || index} className='row'>
-                                <div className='col-6 meetings-content'>
+                            <div key={link?.id || index} className="row">
+                                <div className="col-6 meetings-content">
                                     {link?.link}
                                 </div>
-                                <div className='col meetings-content'>
+                                <div className="col meetings-content">
                                     {link?.passcode}
                                 </div>
-                                <div className='col meetings-content'>
+                                <div className="col meetings-content">
                                     <i
                                         className="bi bi-trash3 icon-delete"
                                         onClick={() => performAction("delete", link)}
@@ -164,7 +163,7 @@ export default function ManageMeetingLinks() {
                         ))}
                     </div>
                 ) : (
-                    <div className='page-loading-spinner-style'>
+                    <div className="page-loading-spinner-style">
                         <LoadingSpinner />
                     </div>
                 )}

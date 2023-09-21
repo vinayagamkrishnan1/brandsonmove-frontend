@@ -1,9 +1,9 @@
-import React, { useState, useRef, useEffect } from 'react';
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
-import { CONSUMERBRANDANDINSIGHTS } from '../../constants/constants';
-import IconNext from '../../assets/icons/slidernext.svg';
+import React, { useState, useRef, useEffect } from "react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import { CONSUMERBRANDANDINSIGHTS } from "../../constants/constants";
+import IconNext from "../../assets/icons/slidernext.svg";
 
 export default function NewCustomerBrandsInsights() {
 
@@ -28,7 +28,7 @@ export default function NewCustomerBrandsInsights() {
         slidesToShow: slidePreviewCount,
         slidesToScroll: 1,
         afterChange: (currentSlide: any) => {
-        console.log('Current Slide:', currentSlide);
+        console.log("Current Slide:", currentSlide);
         },
     };
 
@@ -88,10 +88,10 @@ export default function NewCustomerBrandsInsights() {
     }
 
     useEffect(() => {
-        window.addEventListener('resize', setDimension);
+        window.addEventListener("resize", setDimension);
 
         return(() => {
-            window.removeEventListener('resize', setDimension);
+            window.removeEventListener("resize", setDimension);
         });
     }, [screenSize, slidePreviewCount]);
 
@@ -101,7 +101,7 @@ export default function NewCustomerBrandsInsights() {
         <button 
             onClick={() => toggleAutoplay()}
         >
-            {autoplay ? 'Pause Autoplay' : 'Resume Autoplay'}
+            {autoplay ? "Pause Autoplay" : "Resume Autoplay"}
         </button>
 
         <button
@@ -153,12 +153,12 @@ export default function NewCustomerBrandsInsights() {
                         >
                             <h1
                                 className="story-name"
-                                style={{color: story?.isSelected ? `${'#FFFFFF'}` : `${story?.textcolor}`}}
+                                style={{color: story?.isSelected ? `${"#FFFFFF"}` : `${story?.textcolor}`}}
                             >
                                 {story?.name}
                             </h1>
                             <p
-                                style={{color: story?.isSelected ? `${'#FFFFFF'}` : `${'#000000'}`}}
+                                style={{color: story?.isSelected ? `${"#FFFFFF"}` : `${"#000000"}`}}
                                 className="story-desc"
                             >
                                 {story?.description}

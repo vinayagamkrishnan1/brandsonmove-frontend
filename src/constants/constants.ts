@@ -1,40 +1,40 @@
 import AnimationImg1 from "../assets/animations/1.gif";
 import AnimationImg2 from "../assets/animations/2.gif";
-import AnimationImg3 from '../assets/animations/3.gif';
-import AnimationImg4 from '../assets/animations/4.gif';
-import AnimationImg5 from '../assets/animations/5.gif';
-import AnimationImg6 from '../assets/animations/6.gif';
-import AnimationImg7 from '../assets/animations/7.gif';
-import AnimationImg8 from '../assets/animations/8.gif';
+import AnimationImg3 from "../assets/animations/3.gif";
+import AnimationImg4 from "../assets/animations/4.gif";
+import AnimationImg5 from "../assets/animations/5.gif";
+import AnimationImg6 from "../assets/animations/6.gif";
+import AnimationImg7 from "../assets/animations/7.gif";
+import AnimationImg8 from "../assets/animations/8.gif";
 import defaultAnimationImage from "../assets/animations/defaultimage.gif";
 
 
-import growth from '../assets/images/Growth.svg';
-import growthLeft from '../assets/images/Growth-left.svg';
-import promotion from '../assets/images/Promotion.svg';
-import promotionLeft from '../assets/images/Promotion-left.svg';
-import customerExperience from '../assets/images/CusExperience.svg';
-import customerExperienceLeft from '../assets/images/CusExperience-left.svg';
-import ready from '../assets/images/Ready.svg';
-import readyLeft from '../assets/images/Ready-left.svg';
-import trend from '../assets/images/Trend.svg';
-import trendLeft from '../assets/images/Trend-left.svg';
-import growthIcon from '../assets/icons/growth.svg';
-import promotionIcon from '../assets/icons/promotion.svg';
-import customerIcon from '../assets/icons/customer-experience.svg';
-import readyIcon from '../assets/icons/ready.svg';
-import trendIcon from '../assets/icons/trend.svg';
+import growth from "../assets/images/Growth.svg";
+import growthLeft from "../assets/images/Growth-left.svg";
+import promotion from "../assets/images/Promotion.svg";
+import promotionLeft from "../assets/images/Promotion-left.svg";
+import customerExperience from "../assets/images/CusExperience.svg";
+import customerExperienceLeft from "../assets/images/CusExperience-left.svg";
+import ready from "../assets/images/Ready.svg";
+import readyLeft from "../assets/images/Ready-left.svg";
+import trend from "../assets/images/Trend.svg";
+import trendLeft from "../assets/images/Trend-left.svg";
+import growthIcon from "../assets/icons/growth.svg";
+import promotionIcon from "../assets/icons/promotion.svg";
+import customerIcon from "../assets/icons/customer-experience.svg";
+import readyIcon from "../assets/icons/ready.svg";
+import trendIcon from "../assets/icons/trend.svg";
 
-import icon1 from '../assets/icons/1.png';
-import icon2 from '../assets/icons/2.png';
-import icon3 from '../assets/icons/3.png';
-import icon4 from '../assets/icons/4.png';
-import icon5 from '../assets/icons/5.png';
+import icon1 from "../assets/icons/1.png";
+import icon2 from "../assets/icons/2.png";
+import icon3 from "../assets/icons/3.png";
+import icon4 from "../assets/icons/4.png";
+import icon5 from "../assets/icons/5.png";
 
-import AdImageOne from '../assets/images/header_business_strategy.jpg';
-import AdImageTwo from '../assets/images/header_distribution.jpg';
-import AdImageThree from '../assets/images/header_project_technology.jpg';
-import AdImageFour from '../assets/images/header_trends_research.jpg';
+import AdImageOne from "../assets/images/header_business_strategy.jpg";
+import AdImageTwo from "../assets/images/header_distribution.jpg";
+import AdImageThree from "../assets/images/header_project_technology.jpg";
+import AdImageFour from "../assets/images/header_trends_research.jpg";
 
 export const MAX_IPAD_WIDTH = 820; 
 

@@ -1,5 +1,4 @@
-import React from 'react';
-import '../css/admin.css';
+import "../css/admin.css";
 
 export default function SyndicateRoom() {
   return (

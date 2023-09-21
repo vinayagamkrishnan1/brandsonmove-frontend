@@ -1,9 +1,9 @@
-import { useMutation, useSubscription } from '@apollo/client';
-import React, { useState } from 'react'
-import { DELETE_ONE, GET_ADMINS } from '../../../../graphql';
-import LoadingSpinner from '../../../../components/common/loadingspinner/LoadingSpinner';
-import { showToast } from '../../../../utils/utils';
 import "../../css/admin.css";
+import { useMutation, useSubscription } from "@apollo/client";
+import React, { useState } from "react"
+import { DELETE_ONE, GET_ADMINS } from "../../../../graphql";
+import LoadingSpinner from "../../../../components/common/loadingspinner/LoadingSpinner";
+import { showToast } from "../../../../utils/utils";
 
 export default function AdminList() {
 
@@ -53,7 +53,7 @@ export default function AdminList() {
 
     if (loading) {
         return (
-            <div className='page-loading-spinner-style'>
+            <div className="page-loading-spinner-style">
                 <LoadingSpinner />
             </div>
         );
@@ -69,27 +69,27 @@ export default function AdminList() {
     
     if (admins && admins?.length > 0) {
         return (
-            <div className='meetings-table'>
-                <div className='row'>
-                    <div className='col meetings-content'>
+            <div className="meetings-table">
+                <div className="row">
+                    <div className="col meetings-content">
                         <b>Name</b>
                     </div>
-                    <div className='col meetings-content'>
+                    <div className="col meetings-content">
                         <b>Mobile Number</b>
                     </div>
-                    <div className='col meetings-content'>
+                    <div className="col meetings-content">
                         <b>Options</b>
                     </div>
                 </div>
                 {admins.map((admin: any, index: any) => (
-                    <div key={admin?.id || index} className='row'>
-                        <div className='col meetings-content'>
+                    <div key={admin?.id || index} className="row">
+                        <div className="col meetings-content">
                             {admin?.name}
                         </div>
-                        <div className='col meetings-content'>
+                        <div className="col meetings-content">
                             {admin?.mobile_number}
                         </div>
-                        <div className='col meetings-content'>
+                        <div className="col meetings-content">
                             <i
                                 className="bi bi-trash3 icon-delete"
                                 onClick={() => performAction("delete", admin)}

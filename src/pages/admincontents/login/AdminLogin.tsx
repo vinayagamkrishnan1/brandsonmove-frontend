@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import '../css/admin.css';
-import { useForm } from 'react-hook-form';
-import { toast } from 'react-toastify';
-import LoadingSpinner from '../../../components/common/loadingspinner/LoadingSpinner';
-import { LOGIN } from '../../../graphql';
-import { useQuery } from '@apollo/client';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import "../css/admin.css";
+import { useForm } from "react-hook-form";
+import { toast } from "react-toastify";
+import LoadingSpinner from "../../../components/common/loadingspinner/LoadingSpinner";
+import { LOGIN } from "../../../graphql";
+import { useQuery } from "@apollo/client";
+import { useNavigate } from "react-router-dom";
 
 export default function AdminLogin() {
 
@@ -59,8 +59,8 @@ export default function AdminLogin() {
     }, []);
 
     return (
-        <div className='admin-login-container'>
-            <div className='login-form'>
+        <div className="admin-login-container">
+            <div className="login-form">
                 <form onSubmit={handleSubmit(onSubmit)}>
 
                     <div className="form-field">
@@ -97,7 +97,7 @@ export default function AdminLogin() {
                         {loading ? (
                             <LoadingSpinner />
                         ) : (
-                            <button className="button-submit" type='submit'>
+                            <button className="button-submit" type="submit">
                                 Submit
                             </button>
                         )}

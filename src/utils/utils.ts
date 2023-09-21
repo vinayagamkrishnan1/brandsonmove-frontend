@@ -1,5 +1,5 @@
-import { toast } from 'react-toastify';
-import { CC_MAILS } from '../constants/constants';
+import { toast } from "react-toastify";
+import { CC_MAILS } from "../constants/constants";
 
 
 export const isObjIsEmpty = (object: any) => {
@@ -55,7 +55,7 @@ export const getFormatedDate = (date: Date) => {
 export const convertoDate = (date: any) => {
   const timestamp = new Date(date);
   const date1 = timestamp.getDate();
-  const month = timestamp.toLocaleString('default', { month: 'long' });
+  const month = timestamp.toLocaleString("default", { month: "long" });
   const year = timestamp.getFullYear();
   return `${date1} - ${month} - ${year}`;
 }
