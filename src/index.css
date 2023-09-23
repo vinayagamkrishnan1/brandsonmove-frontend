@@ -4,6 +4,7 @@
   --font-md: clamp(1rem, 5vw + 1.1rem, 1.8rem);
   --font-sm: clamp(0.8rem, 5vw + 1rem, 1.1rem);
   --font-xs: clamp(0.8rem, 5vw + 0.9rem, 1rem);
+  --font-xxs: clamp(0.6rem, 5vw + 0.7rem, 0.8rem);
 }
 
 body {
