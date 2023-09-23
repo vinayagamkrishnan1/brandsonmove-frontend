@@ -1,7 +1,7 @@
 import "./Advertisement.scss";
-import Slider from 'react-slick';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
+import Slider from "react-slick";
 
 import React, { useEffect, useState } from "react";
 import { ADVERTISMENT_IMAGES } from "../../../constants/constants";
@@ -45,7 +45,7 @@ export default function Advertisement() {
         slidesToShow: slidePreviewCount,
         slidesToScroll: 1,
         centerMode: true,
-        centerPadding: '0',
+        centerPadding: "0",
         accessibility: false,
         arrows: false
     };
