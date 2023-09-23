@@ -139,8 +139,6 @@ function NewCustomerBrandsInsights() {
       setSlideCenterMode(true);
     }
 
-    console.log("seeeee", selectedItem);
-
     return () => {
       window.removeEventListener("resize", setDimension);
       clearInterval(autoPlayLeftInterval);
