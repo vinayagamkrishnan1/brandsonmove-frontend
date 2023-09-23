@@ -1,41 +1,72 @@
+// NewCusomerBrandInsights css
 .Slider-flex-container {
     display: flex;
     flex-direction: column;
 }
 
-.slider-customer-brands-insights {
+.slider-customer-brands-insights { 
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     padding: 1rem 3rem 1rem;
-
     .next-prev-button-section {
         display: flex;
         align-items: center;
     }
-
     .slider-section {
-        display: contents;
-
-        .swiper {
-            padding: 1rem 0px !important;
-            .swiper-wrapper {
-                .swiper-slide {
-                    min-height: auto !important;
-                    display: unset !important;
-                }
+        text-align: center;
+        .slick-slider {
+            position: relative;
+            display: inline-grid !important;
+            .slick-list {
+                padding: 1.5rem 0rem !important;
             }
-        }
-
-        .story-slide-item-wrapper {
-            width: fit-content;
-            margin: auto;
+            // .slick-arrow .slick-next, slick-prev {
+            //     display: none !important;
+            // }
         }
     }
 }
 
-@media screen and (max-width: 540px) {
-    .slider-customer-brands-insights {
-        padding: 1rem 2rem !important;
-    }
-}
+// CusomerBrandInsights css
+// .Slider-flex-container {
+//     display: flex;
+//     flex-direction: column;
+// }
+
+// .slider-customer-brands-insights {
+//     display: flex;
+//     flex-direction: row;
+//     justify-content: space-between;
+//     padding: 1rem 3rem 1rem;
+
+//     .next-prev-button-section {
+//         display: flex;
+//         align-items: center;
+//     }
+
+//     .slider-section {
+//         display: contents;
+
+//         .swiper {
+//             padding: 1rem 0px !important;
+//             .swiper-wrapper {
+//                 .swiper-slide {
+//                     min-height: auto !important;
+//                     display: unset !important;
+//                 }
+//             }
+//         }
+
+//         .story-slide-item-wrapper {
+//             width: fit-content;
+//             margin: auto;
+//         }
+//     }
+// }
+
+// @media screen and (max-width: 540px) {
+//     .slider-customer-brands-insights {
+//         padding: 1rem 2rem !important;
+//     }
+// }

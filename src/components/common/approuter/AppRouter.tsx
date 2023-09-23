@@ -12,6 +12,7 @@ import ManageMeetings from "../../../pages/admincontents/managemeetings/ManageMe
 import SyndicateRoom from "../../../pages/admincontents/syndicateroom/SyndicateRoom";
 import SalesConsumptionAnalytics from "../../../pages/salesconsumptionanalytics/SalesConsumptionAnalytics";
 import TrueasureTrove from "../../../pages/trueasureTrove/TrueasureTrove";
+import NewCustomerBrandsInsights from "../../../pages/customerbrandsinsights/NewCustomerBrandsInsights";
 
 const AppRouter = () => {
 
@@ -28,7 +29,8 @@ const AppRouter = () => {
 
             <Route
                 path="/customerbrandsinsights"
-                element={ <CustomerBrandsInsights /> }
+                // element={ <CustomerBrandsInsights /> }
+                element={ <NewCustomerBrandsInsights /> }
             />
             <Route
                 path="/createmeeting"
