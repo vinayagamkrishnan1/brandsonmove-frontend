@@ -1,23 +1,21 @@
 import "./Advertisement.scss";
-import "swiper/css";
-import "swiper/css/bundle";
+import Slider from 'react-slick';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
 import React, { useEffect, useState } from "react";
 import { ADVERTISMENT_IMAGES } from "../../../constants/constants";
-import { Swiper, SwiperSlide } from "swiper/react";
-import SwiperCore, { } from "swiper";
-import { Autoplay, Navigation } from "swiper";
 
 export default function Advertisement() {
 
-    const swiperRef: any = React.useRef(null);
+    const sliderRef: any = React.useRef(null);
+    const [autoplay, setAutoPlay] = useState<any>(true);
     const [advertisementImages] = useState<any>(ADVERTISMENT_IMAGES);
     const [slidePreviewCount, setSlidePreviewCount] = useState<number>(4);
-    const [currentSlideIndex, setCurrentSlideIndex] = useState<number>(0);
     const [screenSize, setScreenSize] = useState<any>({
         dynamicWidth: window.innerWidth,
         dynamicHeight: window.innerHeight
     });
-    SwiperCore.use([Autoplay]);
 
     const setDimension = () => {
         setScreenSize({
@@ -40,43 +38,44 @@ export default function Advertisement() {
         }
     };
 
+    const settings = {
+        autoplay: autoplay,
+        infinite: true,
+        speed: 500,
+        slidesToShow: slidePreviewCount,
+        slidesToScroll: 1,
+        centerMode: true,
+        centerPadding: '0',
+        accessibility: false,
+        arrows: false
+    };
+
     useEffect(() => {
+        setAutoPlay(true);
         _setSlidePreviewCount();
         window.addEventListener("resize", setDimension);
         return(() => {
             window.removeEventListener("resize", setDimension);
         });
-    }, [screenSize, slidePreviewCount]);
+    }, [screenSize, slidePreviewCount, autoplay]);
     
     return (
         <div>
-            <Swiper
+            <Slider
                 className="advertisment-slider"
-                navigation={true}
-                modules={[Navigation]}
-                loop={true}
-                loopPreventsSliding={true}
-                loopedSlides={null}
-                autoplay={true}
-                onSwiper={(swiper) => {
-                    swiperRef.current = swiper;
-                }}
-                slidesPerView={slidePreviewCount}
-                onSlideChange={(slide: any) => {
-                    setCurrentSlideIndex(slide?.realIndex);
-                }}
-                onReachEnd={() => {
-                }}
+                {...settings}
+                ref={sliderRef}
             >
-                {advertisementImages && advertisementImages?.length > 0 && 
+                {advertisementImages &&
+                advertisementImages?.length > 0 &&
                 advertisementImages.map((ads: any, index: any) => (
-                    <SwiperSlide key={ads?.id || index}>
+                    <div key={index}>
                         <div className="advertisement-container">
                             <img className="advertisement-images" src={ads?.url} />
                         </div> 
-                    </SwiperSlide>
+                    </div>
                 ))}
-            </Swiper>
+            </Slider>
         </div>
     );
 }
