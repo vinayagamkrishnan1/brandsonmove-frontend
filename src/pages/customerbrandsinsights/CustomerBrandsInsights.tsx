@@ -108,10 +108,9 @@ function NewCustomerBrandsInsights() {
         setShowDefaultContent(false);
         setSelectedItem(customerBrandsAndInsights[0]);
         setSelectedStoryAndActiveSlide();
-        console.log("ShowFull image", showFullViewImage);
-        // if(showFullViewImage) {
-        //   setShowFullViewImage(flag => !flag);
-        // }
+        if(showFullViewImage) {
+          setShowFullViewImage(flag => !flag);
+        }
       }, 7000);
       setSlideTimeOut(timer);
     } else {
@@ -127,10 +126,6 @@ function NewCustomerBrandsInsights() {
     if (!playLeft && !playRight) {
       clearInterval(autoPlayLeftInterval);
       clearInterval(autoPlayRightInterval);
-    }
-
-    if(showDefaultContent) {
-      setShowDefaultContent(false);
     }
 
     if(slidePreviewCount == 2) {
@@ -166,56 +161,56 @@ function NewCustomerBrandsInsights() {
 
   return (
     <div className="Slider-flex-container">
-      <div className="slider-customer-brands-insights">
-        <div className="next-prev-button-section">
-          <img
-            className="icon-prev"
-            src={IconNext}
-            alt="my image"
-            onClick={goToPreviousSlide}
-          />
-        </div>
-        <div className="slider-section">
-          <Slider {...settings} ref={sliderRef}>
-            {customerBrandsAndInsights &&
-            customerBrandsAndInsights?.length > 0 &&
-            customerBrandsAndInsights.map((story: any, index: any) => (
-              <div key={index}>
-                <SlideItem
-                  story={story}
-                  onClcikOfSlideItem={() => {
-                    setPlayRight(false);
-                    setPlayLeft(false);
-                    setActiveSlide(story?.id);
-                    sliderRef.current.slickGoTo(index);
-                  }}
+        <div className="slider-customer-brands-insights">
+            <div className="next-prev-button-section">
+                <img
+                    className="icon-prev"
+                    src={IconNext}
+                    alt="my image"
+                    onClick={goToPreviousSlide}
                 />
-              </div>
-            ))}
-          </Slider>
+            </div>
+            <div className="slider-section">
+              <Slider {...settings} ref={sliderRef}>
+                {customerBrandsAndInsights &&
+                customerBrandsAndInsights?.length > 0 &&
+                customerBrandsAndInsights.map((story: any, index: any) => (
+                  <div key={index}>
+                    <SlideItem
+                        story={story}
+                        onClcikOfSlideItem={() => {
+                          setPlayRight(false);
+                          setPlayLeft(false);
+                          setActiveSlide(story?.id);
+                          sliderRef.current.slickGoTo(index);
+                        }}
+                    />
+                  </div>
+                ))}
+              </Slider>
+            </div>
+            <div className="next-prev-button-section">
+              <img
+                className="icon-next"
+                src={IconNext}
+                onClick={goToNextSlide}
+              />
+            </div>
         </div>
-        <div className="next-prev-button-section">
-          <img
-            className="icon-next"
-            src={IconNext}
-            onClick={goToNextSlide}
+        <div>
+          <SlideItemDetail
+            showDefaultContent={showDefaultContent}
+            story={selectedItem}
+            showFullViewImage={showFullViewImage}
+            onclickImage={() => {
+              setShowFullViewImage((showFullViewImage: boolean) => !showFullViewImage);
+              if (showFullViewImage) {
+                setPlayRight(false);
+                setPlayLeft(false);
+              }
+            }}
           />
         </div>
-      </div>
-      <div>
-        <SlideItemDetail
-          showDefaultContent={showDefaultContent}
-          story={selectedItem}
-          showFullViewImage={showFullViewImage}
-          onclickImage={() => {
-            setShowFullViewImage((pre: boolean) => !pre);
-            if (showFullViewImage) {
-              setPlayRight(false);
-              setPlayLeft(false);
-            }
-          }}
-        />
-      </div>
     </div>
   );
 }
