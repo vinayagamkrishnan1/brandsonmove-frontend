@@ -7,6 +7,17 @@
     width: 100%;
 }
 
+.default-story-title {
+    text-align: justify;
+    font-size: clamp(1.3rem, 5vw + 1.7rem, 2rem);
+    font-family: 'Bebas Neue';
+}
+.default-story-paragraph {
+    text-align: justify;
+    font-size: clamp(1rem, 5vw + 1.3rem, 1.4rem);
+    margin-bottom: 0.5rem;
+}
+
 .story-title {
     text-align: justify;
     font-size: var(--font-md);

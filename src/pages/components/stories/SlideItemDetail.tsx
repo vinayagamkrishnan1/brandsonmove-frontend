@@ -44,12 +44,23 @@ const SlideItemDetail: React.FC<SlideItemDetailProps> = ({
                         {animationImage(story)}
                     </div>
                 }
-                <h3 className="story-title" style={{color: story?.textcolor}}>
+                <h3
+                    style={{color: story?.textcolor}}
+                    className={`${showDefaultContent ? "default-story-title" : "story-title"}`}
+                >
                     {story?.title}
                 </h3>
-                <p className="story-paragraph">{story?.paragraph1}</p>
+                <p
+                    className={`${showDefaultContent ? "default-story-paragraph" : "story-paragraph"}`}
+                >
+                    {story?.paragraph1}
+                </p>
                 {story?.paragraph2 &&
-                    <p className="story-paragraph">{story?.paragraph2}</p>
+                    <p
+                        className={`${showDefaultContent ? "default-story-paragraph" : "story-paragraph"}`}
+                    >
+                        {story?.paragraph2}
+                    </p>
                 }
                 { (screenSize?.dynamicWidth <= ipadMaxWidth) &&
                     <div className="animation-image-container">
