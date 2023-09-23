@@ -1,13 +1,13 @@
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./CustomerBrandInsights.scss";
-import React, { useState, useRef, useEffect, useCallback } from "react";
+import { useState, useRef, useEffect, useCallback } from "react";
 import Slider from "react-slick";
-
 import IconNext from "../../assets/icons/slidernext.svg";
 import { CONSUMERBRANDANDINSIGHTS, CONSUMERBRANDANDINSIGHTS_DEFAULTCONTENT } from "../../constants/constants";
-import SlideItem from "./components/SlideItem";
+import SlideItem from "./components/slideitem/SlideItem";
 import SlideItemDetail from "../components/stories/SlideItemDetail";
+import FullViewAnimationImage from "./components/modalwindow/FullViewAnimationImage";
 
 function NewCustomerBrandsInsights() {
   const sliderRef: any = useRef(null);
@@ -17,7 +17,7 @@ function NewCustomerBrandsInsights() {
   const [playRight, setPlayRight] = useState<boolean>(false);
   const [customerBrandsAndInsights] = useState<any>(CONSUMERBRANDANDINSIGHTS);
   const [showDefaultContent, setShowDefaultContent] = useState<boolean>(true);
-  const [showFullViewImage, setShowFullViewImage] = useState<boolean>(true);
+  const [showFullViewImage, setShowFullViewImage] = useState<boolean>(false);
   const [selectedItem, setSelectedItem] = useState<any>({});
   const [slideTimeOut, setSlideTimeOut] = useState<any>(null);
   const [autoplay, setAutoPlay] = useState<any>(false);
@@ -90,6 +90,10 @@ function NewCustomerBrandsInsights() {
     }
   };
 
+  const showFullViewAnimationImage = () => {
+    setShowFullViewImage((showFullViewImage: boolean) => !showFullViewImage)
+  }
+
   useEffect(() => {
 
     window.addEventListener("resize", setDimension);
@@ -108,9 +112,9 @@ function NewCustomerBrandsInsights() {
         setShowDefaultContent(false);
         setSelectedItem(customerBrandsAndInsights[0]);
         setSelectedStoryAndActiveSlide();
-        if(showFullViewImage) {
-          setShowFullViewImage(flag => !flag);
-        }
+        // if(showFullViewImage) {
+        //   setShowFullViewImage(flag => !flag);
+        // }
       }, 7000);
       setSlideTimeOut(timer);
     } else {
@@ -135,6 +139,8 @@ function NewCustomerBrandsInsights() {
       setSlideCenterMode(true);
     }
 
+    console.log("seeeee", selectedItem);
+
     return () => {
       window.removeEventListener("resize", setDimension);
       clearInterval(autoPlayLeftInterval);
@@ -143,8 +149,12 @@ function NewCustomerBrandsInsights() {
       clearTimeout(slideTimeOut);
     };
 
-  }, [activeSlide, playLeft, playRight, showFullViewImage, 
+  }, [activeSlide, playLeft, playRight, 
     selectedItem, slideCenterMode, slidePreviewCount]);
+
+  const closeModal = () => {
+    setShowFullViewImage((showFullViewImage: boolean) => !showFullViewImage);
+  };
 
   const settings = {
     autoplay: autoplay,
@@ -162,40 +172,40 @@ function NewCustomerBrandsInsights() {
   return (
     <div className="Slider-flex-container">
         <div className="slider-customer-brands-insights">
-            <div className="next-prev-button-section">
-                <img
-                    className="icon-prev"
-                    src={IconNext}
-                    alt="my image"
-                    onClick={goToPreviousSlide}
-                />
-            </div>
-            <div className="slider-section">
-              <Slider {...settings} ref={sliderRef}>
-                {customerBrandsAndInsights &&
-                customerBrandsAndInsights?.length > 0 &&
-                customerBrandsAndInsights.map((story: any, index: any) => (
-                  <div key={index}>
-                    <SlideItem
-                        story={story}
-                        onClcikOfSlideItem={() => {
-                          setPlayRight(false);
-                          setPlayLeft(false);
-                          setActiveSlide(story?.id);
-                          sliderRef.current.slickGoTo(index);
-                        }}
-                    />
-                  </div>
-                ))}
-              </Slider>
-            </div>
-            <div className="next-prev-button-section">
-              <img
-                className="icon-next"
-                src={IconNext}
-                onClick={goToNextSlide}
-              />
-            </div>
+          <div className="next-prev-button-section">
+            <img
+              className="icon-prev"
+              src={IconNext}
+              alt="my image"
+              onClick={goToPreviousSlide}
+            />
+          </div>
+          <div className="slider-section">
+            <Slider {...settings} ref={sliderRef}>
+              {customerBrandsAndInsights &&
+              customerBrandsAndInsights?.length > 0 &&
+              customerBrandsAndInsights.map((story: any, index: any) => (
+                <div key={index}>
+                  <SlideItem
+                      story={story}
+                      onClcikOfSlideItem={() => {
+                        setPlayRight(false);
+                        setPlayLeft(false);
+                        setActiveSlide(story?.id);
+                        sliderRef.current.slickGoTo(index);
+                      }}
+                  />
+                </div>
+              ))}
+            </Slider>
+          </div>
+          <div className="next-prev-button-section">
+            <img
+              className="icon-next"
+              src={IconNext}
+              onClick={goToNextSlide}
+            />
+          </div>
         </div>
         <div>
           <SlideItemDetail
@@ -203,6 +213,8 @@ function NewCustomerBrandsInsights() {
             story={selectedItem}
             showFullViewImage={showFullViewImage}
             onclickImage={() => {
+              setPlayRight(false);
+              setPlayLeft(false);
               setShowFullViewImage((showFullViewImage: boolean) => !showFullViewImage);
               if (showFullViewImage) {
                 setPlayRight(false);
@@ -211,6 +223,11 @@ function NewCustomerBrandsInsights() {
             }}
           />
         </div>
+        <FullViewAnimationImage
+          isOpen={showFullViewImage}
+          onClose={closeModal}
+          imageurl={selectedItem?.animationurl}
+        />
     </div>
   );
 }

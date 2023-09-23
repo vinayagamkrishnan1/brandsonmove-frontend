@@ -5,7 +5,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import IconNext from "../../assets/icons/slidernext.svg";
 import { CONSUMERBRANDANDINSIGHTS, CONSUMERBRANDANDINSIGHTS_DEFAULTCONTENT } from '../../constants/constants';
-import SlideItem from './components/SlideItem';
+import SlideItem from './components/slideitem/SlideItem';
 import SlideItemDetail from '../components/stories/SlideItemDetail';
 
 function NewCustomerBrandsInsights() {

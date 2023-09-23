@@ -70,7 +70,7 @@ const SlideItemDetail: React.FC<SlideItemDetailProps> = ({
                             src={scissor} alt="image"
                         />
                         <img
-                            className={`${!showFullViewImage ? "animation-image-fullsize" : "animation-image"}`}
+                            className="animation-image"
                             src={story?.animationurl}
                             alt="loading"
                             onClick={onclickImage}
@@ -84,7 +84,7 @@ const SlideItemDetail: React.FC<SlideItemDetailProps> = ({
     const animationImage = (story: any) => {
         return (
             <div
-                className={`${!showFullViewImage ? "animation-image-container-fullsize" : "animation-image-container"}`}
+                className="animation-image-container"
             >
                 <img
                     onClick={onclickImage}
@@ -103,35 +103,9 @@ const SlideItemDetail: React.FC<SlideItemDetailProps> = ({
 
     return (
         <div className="slide-item-detail-page">
-            {showDefaultContent ? (
-                <div>
-                    { showFullViewImage ? (
-                        <div className="story-detail-info">
-                            {showContent(story)}
-                        </div>
-                    ) : (
-                        // <div className="title-image-container">
-                        //     {showFullSizeImageView(story)}
-                        // </div>
-                        <div>
-                            {animationImage(story)}
-                        </div>
-                    )}
-                </div>
-            ) : (
-                <div className="story-detail-info">
-                    { showFullViewImage ? (
-                        showContent(story)
-                    ) : (
-                        <div>
-                            {animationImage(story)}
-                        </div>
-                        // <div className="title-image-container">
-                        //     {showFullSizeImageView(story)}
-                        // </div>
-                    )}
-                </div>
-            )}
+            <div className="story-detail-info">
+                {showContent(story)}
+            </div>
         </div>
     );
 }
