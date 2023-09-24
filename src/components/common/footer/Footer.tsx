@@ -43,7 +43,7 @@ export default function Footer() {
     return (
         <div className="Footer">
             <Advertisement />
-            <Advertisement1 />
+            {/* <Advertisement1 /> */}
             { !isObjIsEmpty(contactInfo) ? (
                 <div className="footer-navigation">
                     <div className="footer-navigation-item">

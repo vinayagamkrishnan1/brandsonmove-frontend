@@ -61,11 +61,6 @@ export default function Advertisement1() {
     
     return (
         <div>
-
-            <div>New slider contents</div>
-            {JSON.stringify(advertisementImages)}
-            <img src={advertisementImages[0]?.url} />
-
             <Slider
                 {...settings}
                 ref={sliderRef}

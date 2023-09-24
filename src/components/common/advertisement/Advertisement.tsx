@@ -62,7 +62,7 @@ export default function Advertisement() {
     return (
         <div>
             <Slider
-                className="advertisment-slider"
+                // className="advertisment-slider"
                 {...settings}
                 ref={sliderRef}
             >
