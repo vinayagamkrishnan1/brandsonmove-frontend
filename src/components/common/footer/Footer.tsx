@@ -12,7 +12,6 @@ import IconMailbox from "../../../assets/icons/msailbox.svg";
 import IconLocation from "../../../assets/icons/location.svg";
 import { isObjIsEmpty } from "../../../utils/utils";
 import LoadingSpinner from "../loadingspinner/LoadingSpinner";
-import Advertisement1 from "../advertisement/Advertisement1";
 
 export default function Footer() {
 
@@ -43,7 +42,6 @@ export default function Footer() {
     return (
         <div className="Footer">
             <Advertisement />
-            {/* <Advertisement1 /> */}
             { !isObjIsEmpty(contactInfo) ? (
                 <div className="footer-navigation">
                     <div className="footer-navigation-item">
