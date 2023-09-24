@@ -64,6 +64,22 @@ export default function Advertisement1() {
 
             <div>New slider contents</div>
             {JSON.stringify(advertisementImages)}
+            <img src={advertisementImages[0]?.url} />
+
+            <Slider
+                {...settings}
+                ref={sliderRef}
+            >
+                {advertisementImages &&
+                advertisementImages?.length > 0 &&
+                advertisementImages.map((ads: any, index: any) => (
+                    <div key={index}>
+                        <div>
+                            <img src={ads?.url} />
+                        </div> 
+                    </div>
+                ))}
+            </Slider>
 
             {/* <Slider
                 className="advertisment-slider"
