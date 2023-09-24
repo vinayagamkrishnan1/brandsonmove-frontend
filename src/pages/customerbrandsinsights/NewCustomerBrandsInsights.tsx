@@ -6,7 +6,7 @@ import 'slick-carousel/slick/slick-theme.css';
 import IconNext from "../../assets/icons/slidernext.svg";
 import { CONSUMERBRANDANDINSIGHTS, CONSUMERBRANDANDINSIGHTS_DEFAULTCONTENT } from '../../constants/constants';
 import SlideItem from './components/slideitem/SlideItem';
-import SlideItemDetail from '../components/stories/SlideItemDetail';
+import SlideItemDetail from '../components/stories/SlideItemDetailPopup';
 
 function NewCustomerBrandsInsights() {
   const sliderRef: any = useRef(null);

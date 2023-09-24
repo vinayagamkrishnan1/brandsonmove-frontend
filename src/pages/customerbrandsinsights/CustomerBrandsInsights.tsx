@@ -6,8 +6,8 @@ import Slider from "react-slick";
 import IconNext from "../../assets/icons/slidernext.svg";
 import { CONSUMERBRANDANDINSIGHTS, CONSUMERBRANDANDINSIGHTS_DEFAULTCONTENT } from "../../constants/constants";
 import SlideItem from "./components/slideitem/SlideItem";
-import SlideItemDetail from "../components/stories/SlideItemDetail";
 import FullViewAnimationImage from "./components/modalwindow/FullViewAnimationImage";
+import SlideItemDetail from "../components/stories/SlideItemDetail";
 
 function NewCustomerBrandsInsights() {
   const sliderRef: any = useRef(null);
@@ -17,7 +17,7 @@ function NewCustomerBrandsInsights() {
   const [playRight, setPlayRight] = useState<boolean>(false);
   const [customerBrandsAndInsights] = useState<any>(CONSUMERBRANDANDINSIGHTS);
   const [showDefaultContent, setShowDefaultContent] = useState<boolean>(true);
-  const [showFullViewImage, setShowFullViewImage] = useState<boolean>(false);
+  const [showFullViewImage, setShowFullViewImage] = useState<boolean>(true);
   const [selectedItem, setSelectedItem] = useState<any>({});
   const [slideTimeOut, setSlideTimeOut] = useState<any>(null);
   const [autoplay, setAutoPlay] = useState<any>(false);
@@ -89,10 +89,6 @@ function NewCustomerBrandsInsights() {
       setSlidePreviewCount(4);
     }
   };
-
-  const showFullViewAnimationImage = () => {
-    setShowFullViewImage((showFullViewImage: boolean) => !showFullViewImage)
-  }
 
   useEffect(() => {
 
@@ -221,11 +217,12 @@ function NewCustomerBrandsInsights() {
             }}
           />
         </div>
-        <FullViewAnimationImage
+
+        {/* <FullViewAnimationImage
           isOpen={showFullViewImage}
           onClose={closeModal}
           imageurl={selectedItem?.animationurl}
-        />
+        /> */}
     </div>
   );
 }
