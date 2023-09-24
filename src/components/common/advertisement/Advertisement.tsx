@@ -62,7 +62,7 @@ export default function Advertisement() {
     return (
         <div>
             <Slider
-                // className="advertisment-slider"
+                className="advertisment-slider"
                 {...settings}
                 ref={sliderRef}
             >
@@ -70,7 +70,9 @@ export default function Advertisement() {
                 advertisementImages?.length > 0 &&
                 advertisementImages.map((ads: any, index: any) => (
                     <div key={index}>
-                        <div className="advertisement-container">
+                        <div
+                            // className="advertisement-container"
+                        >
                             <img className="advertisement-images" src={ads?.url} />
                         </div> 
                     </div>
