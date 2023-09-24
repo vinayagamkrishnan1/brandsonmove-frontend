@@ -86,7 +86,7 @@ function NewCustomerBrandsInsights() {
       setSlidePreviewCount(3);
     }
     if (screenSize?.dynamicWidth >= 1201) {
-      setSlidePreviewCount(5);
+      setSlidePreviewCount(4);
     }
   };
 
@@ -160,7 +160,7 @@ function NewCustomerBrandsInsights() {
     speed: 500,
     slidesToShow: slidePreviewCount,
     slidesToScroll: 1,
-    centerMode: slideCenterMode,
+    // centerMode: slideCenterMode,
     centerPadding: "0",
     afterChange: handleSlideChange,
     accessibility: false,

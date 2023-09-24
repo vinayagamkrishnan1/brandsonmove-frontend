@@ -7,7 +7,7 @@ import { Controller, useForm } from "react-hook-form";
 import { useMutation, useSubscription, useQuery } from "@apollo/client";
 import { GET_ALL_MEETING_TIMINGS, GET_CONTENT, GET_MEETING_LINKS, INSERT_ONE, GET_SCHEDULED_DATE_TIME_FOR_MONTH } from "../../graphql";
 import LoadingSpinner from "../../components/common/loadingspinner/LoadingSpinner";
-import { convetToTimeStamp, getFormatedDate, getOneMonthFromToday, getToday, showToast } from "../../utils/utils";
+import { convetToTimeStamp, getFormatedDate, getOneMonthFromToday, getToday, isObjIsEmpty, showToast } from "../../utils/utils";
 import { sendMail } from "../../services/EmailService";
 import { CC_MAILS, MAX_IPAD_WIDTH, TO_MAILS } from "../../constants/constants";
 // import { createGoogleMeet } from "../../services/MeetingService";
@@ -196,6 +196,8 @@ const CreateMeeting: React.FC<any> = () => {
         }
       });
     }
+
+    console.log(errors);
 
     return () => {
       window.removeEventListener("resize", setDimension);
@@ -453,7 +455,21 @@ const CreateMeeting: React.FC<any> = () => {
         </div>
       }
       <div
-        className="paragraph-container"
+        // className="paragraph-container"
+
+        className={`paragraph-container
+          ${(isObjIsEmpty(errors) && showForm && (screenSize?.dynamicWidth > 819 && screenSize?.dynamicWidth <= 920)) ? "class1" : ""}
+          ${(!isObjIsEmpty(errors) && showForm && (screenSize?.dynamicWidth > 819 && screenSize?.dynamicWidth <= 920)) ? "class1-1" : ""}
+
+          ${(isObjIsEmpty(errors) && showForm && (screenSize?.dynamicWidth >= 921 && screenSize?.dynamicWidth <= 1200)) ? "class2" : ""}
+          ${(!isObjIsEmpty(errors) && showForm && (screenSize?.dynamicWidth > 921 && screenSize?.dynamicWidth <= 1200)) ? "class2-2" : ""}
+
+          ${(isObjIsEmpty(errors) && showForm && (screenSize?.dynamicWidth >= 1021)) ? "class3" : ""}
+          ${(!isObjIsEmpty(errors) && showForm && (screenSize?.dynamicWidth > 1021)) ? "class3-3" : ""}
+
+        `}
+        // style={{height: formHeight}}
+        // className={`${showForm ? "paragraph-container-without-form" : "paragraph-container"}`}
         // style={{paddingBottom: `${(showForm && screenSize?.dynamicWidth >= ipadMaxWidth) ? `${formHeight / 50}rem` : '0' }`}}
       >
         <div className={`${(showForm && screenSize?.dynamicWidth >= ipadMaxWidth) ? "content-desktop-design" : ""}`}>

@@ -36,7 +36,7 @@ import AdImageTwo from '../assets/images/header_distribution.jpg';
 import AdImageThree from '../assets/images/header_project_technology.jpg';
 import AdImageFour from '../assets/images/header_trends_research.jpg';
 
-export const MAX_IPAD_WIDTH = 820; 
+export const MAX_IPAD_WIDTH = 819; 
 
 export const CC_MAILS = [
     // "rayapu00@rediffmail.com",

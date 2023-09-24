@@ -4,7 +4,7 @@
   justify-content: space-between;
   gap: 2rem;
   font-family: 'Bebas Neue';
-  padding: max(1vh, 0rem) 3rem 0;
+  padding: max(1vh, 0rem) 3rem 0.5rem;
   font-size: var(--font-sm);
 }
 
@@ -34,7 +34,7 @@
   padding: 0.5rem 0.75rem 0.1rem;
 }
 .navbar-logo {
-  width: 125px;
+  width: 115px;
 }
 .setup-meeting {
   color: #75BA75;
