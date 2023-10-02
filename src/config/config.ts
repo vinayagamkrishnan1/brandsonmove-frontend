@@ -34,7 +34,8 @@ export const APP_CONFIG = {
   // RAZORPAYKEY_LIVE: "rzp_live_0OhhivD3EhzTFM",
   SUPPORT_NUMBER: "+917702086555",
   SUREPASS_API_BASE_URL:"https://kyc-api.aadhaarkyc.io/api/v1/",
-  API_BASE_URL: "http://localhost:3000/api",
+  // API_BASE_URL: "http://localhost:3000/api",
+  API_BASE_URL: "https://brandsonmove-server.onrender.com/api",
   SUREPASS_APIS_TOKEN: "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6ZmFsc2UsImlhdCI6MTY0MTIxNDczNSwianRpIjoiMmE4MWZkMTUtNWU0Yy00NjY1LWE0NTItYTE4ZDRmZTRkOTdkIiwidHlwZSI6ImFjY2VzcyIsImlkZW50aXR5IjoiZGV2LmtyNGFsbEBhYWRoYWFyYXBpLmlvIiwibmJmIjoxNjQxMjE0NzM1LCJleHAiOjE5NTY1NzQ3MzUsInVzZXJfY2xhaW1zIjp7InNjb3BlcyI6WyJyZWFkIl19fQ.xq-191hmb69EjYkJ5r4c2yAJNf2lMqnA_3PhfnCrzNY",
   ...process.env,
 };

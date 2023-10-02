@@ -257,11 +257,21 @@ export default function ManageMeetings() {
                         if(isAllDeclined && !status) {
                             let mailSendResult = await sendMail(constructEmailInviteProperties(meeting, slot, "decline"));
                             changeSpinnerStatus(status, meeting, slot, false, false);
+                            if(mailSendResult?.status == 200 || mailSendResult?.data?.message == "success") {
+                                showToast("Notified user.", true);
+                            } else {
+                                showToast("Error, something went wrong.", false);
+                            }
                         }
 
                         if(!isAllDeclined && status) {
                             let mailSendResult = await sendMail(constructEmailInviteProperties(meeting, slot, "invite"));
                             changeSpinnerStatus(status, meeting, slot, false, false);
+                            if(mailSendResult?.status == 200 || mailSendResult?.data?.message == "success") {
+                                showToast("Notified user.", true);
+                            } else {
+                                showToast("Error, something went wrong.", false);
+                            }
                         }
                     }
                 } else {
