@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     .title-paragraph-button-container {
-        padding: 1rem 3rem 1rem;
+        padding: 3rem;
     }
     .paragraph-container {
         padding: 1rem 3rem 1rem;
@@ -10,7 +10,8 @@
         .get-report-text {
             color: #434544;
             text-align: justify;
-            font-size: var(--font-xs);
+            // font-size: var(--font-xs);
+            font-size: clamp(1rem, 5vw + 1.3rem, 1.4rem);
             font-family: 'Roboto';
         }
     }   
@@ -25,7 +26,7 @@
         padding: 15px 20px;
     } 
     .content-desktop-design {
-        width: 50%;
+        width: 55%;
     }
     .content-mobile-design {
         width: 100%;
@@ -35,7 +36,7 @@
         width: 100%;
     }
     .form-desktop-design {
-        width: 50%;
+        width: 45%;
         right: 0;
         position: absolute;
     }
@@ -45,7 +46,7 @@
         text-transform: uppercase;
     }
     .title-h2 {
-        font-size: var(--font-lg);
+        font-size: var(--font-xl);
         margin: 0;
     }
     .title-h3 {
@@ -54,6 +55,9 @@
     }
     .content {
         text-align: justify;
+        p {
+            font-size: clamp(0.8rem, 5vw + 0.9rem, 1.25rem);;
+        }
     }
     .form-mobile-design, .form-desktop-design {
         .label {
@@ -71,26 +75,31 @@
             border-radius: 5px;
             box-shadow: 0px 14px 27px 0px rgba(0, 0, 0, 0.05);
             background: #fff;
-            .form-field {
-                padding-bottom: 12px;
-                .form-input {
-                    height: 45px;
-                    text-indent: 20px;
-                    width: 100%;
-                    border: 1px solid #C0C0C0;
+            form {
+                font-size: clamp(0.8rem, 5vw + 0.9rem, 1.15rem);;
+                .form-field {
+                    padding-bottom: 5px;
+                    .form-input {
+                        height: 42px;
+                        text-indent: 15px;
+                        width: 100%;
+                        border: 1px solid #C0C0C0;
+                    }
+                    .input {
+                        color: #000;
+                        font-family: Montserrat;
+                        font-weight: 400;
+                        line-height: 32px;
+                    }
+                    
                 }
-                .input {
-                    color: #000;
-                    font-family: Montserrat;
-                    font-weight: 400;
-                    line-height: 32px;
-                }
-                
             }
+           
             .error-message {
                 color: red;
-                padding: 5px 0px;
+                padding: 0;
                 margin-bottom: 0;
+                font-size: var(--font-xxs);
             }
 
             .interested-area-field-container {
@@ -104,7 +113,7 @@
                 }
             }
             .meeting-type-container {
-                margin-top: 30px;
+                margin-top: 22px;
                 justify-content: space-between;
                 display: flex;
 
@@ -115,8 +124,8 @@
                     .meeting-type-radio-button {
                         box-sizing: border-box;
                         appearance: none;
-                        width: 28px;
-                        height: 27px;
+                        width: 25px;
+                        height: 25px;
                         border: 1px solid #000;
                         background: rgba(249, 247, 247, 0.56);
                       }
@@ -130,8 +139,9 @@
                 padding: 10px 0px;
                 .time-slots-picker-item {
                     padding: 5px 0px;
+                    display: flex;
                     .time-slot-label {
-                        padding-right: 30px;
+                        padding-right: 25px;
                         color: #565C59 !important;
                         font-family: 'Roboto';
                     }
@@ -147,14 +157,14 @@
                 text-transform: uppercase;
                 border: 1px solid #75BA75;
                 background-color: transparent;
-                padding: 15px 30px;
+                padding: 10px 30px;
             }
         }
     }
 }
 
 .react-datepicker-wrapper {
-    width: 99%;
+    width: 85%;
 }
 .react-datepicker__input-container input {
     border: none !important;
@@ -172,12 +182,12 @@
     text-transform: uppercase;
     border: 1px solid #75BA75;
     background-color: transparent;
-    padding: 15px 30px;
+    padding: 10px 30px;
 }
 
 @media screen and (min-width: 820px) {
     .paragraph-container {
-        padding: 1rem 3rem 1rem !important;
+        padding: 4rem 3rem !important;
     }
 }
 
@@ -233,43 +243,42 @@
 // }
 
 
-.class2 {
-    padding: 1rem 3rem 12rem !important
-}
-.class3 {
-    padding: 1rem 3rem 6rem !important;
-}
-.class4 {
-    padding: 1rem 3rem 9rem !important;
-}
-.class5 {
-    padding: 1rem 3rem 17rem !important; 
-}
-.class6 {
-    padding: 1rem 3rem 35rem !important; 
-}
+// .class2 {
+//     padding: 1rem 3rem 12rem !important
+// }
+// .class3 {
+//     padding: 1rem 3rem 6rem !important;
+// }
+// .class4 {
+//     padding: 1rem 3rem 9rem !important;
+// }
+// .class5 {
+//     padding: 1rem 3rem 17rem !important; 
+// }
+// .class6 {
+//     padding: 1rem 3rem 35rem !important; 
+// }
 
-.class1 {
-    // padding: max(1vh, 1rem) 2rem 12rem 2rem !important;
-    padding: 1rem 3rem 12rem !important
-}
-.class1-1 {
-    padding: 1rem 3rem 24rem !important
-}
+// .class1 {
+//     padding: 1rem 3rem 12rem !important
+// }
+// .class1-1 {
+//     padding: 1rem 3rem 24rem !important
+// }
 
-.class2 {
-    padding: 1rem 3rem 18rem !important
-}
+// .class2 {
+//     padding: 1rem 3rem 18rem !important
+// }
 
-.class2-2 {
-    padding: 1rem 3rem 31rem !important
-}
+// .class2-2 {
+//     padding: 1rem 3rem 31rem !important
+// }
 
-.class3 {
-    padding: 1rem 3rem 21rem !important
-}
+// .class3 {
+//     padding: 1rem 3rem 21rem !important
+// }
 
-.class3-3 {
-    padding: 1rem 3rem 34rem !important
-}
+// .class3-3 {
+//     padding: 1rem 3rem 34rem !important
+// }
 

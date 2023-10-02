@@ -1,8 +1,5 @@
-.slide-item-detail-page {
-
-}
 .info-animation-container {
-    padding: 2rem 3rem 1rem;
+    padding: 1rem 3rem 1rem;
     display: inline-block;
     width: 100%;
 }
@@ -25,8 +22,10 @@
 }
 .story-paragraph {
     text-align: justify;
-    font-size: var(--font-xs);
+    // font-size: var(--font-xs);
+    font-size: clamp(0.8rem, 5vw + 0.9rem, 1.3rem);
     margin-bottom: 0.5rem;
+    line-height: 1.35;
 }
 
 .animation-image {
@@ -55,6 +54,7 @@
 .story-detail-info {
     padding-top: 0;
     margin-top: 0;
+  
 }
 
 .icon-prev {
@@ -82,11 +82,14 @@
 }
 
 .animation-image-container-fullsize {
-    width: 95% !important;
-    margin-left: 2rem;
-    margin: 1rem 1rem 2rem 1rem;
+    margin: 1rem 4rem;
     border: 2px dashed #000;
     position: relative;
+    text-align: center; 
+
+    .animation-image {
+        width: 75%;
+    }
 }
 
 .animation-image {

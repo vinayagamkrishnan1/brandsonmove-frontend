@@ -4,7 +4,8 @@
   justify-content: space-between;
   gap: 2rem;
   font-family: 'Bebas Neue';
-  padding: max(1vh, 0rem) 3rem 0.5rem;
+  // padding: max(1vh, 0rem) 3rem 0.5rem;
+  padding: max(0vh, 0.25rem) 3rem 0.25rem;
   font-size: var(--font-sm);
 }
 
@@ -31,7 +32,7 @@
   display: flex;
   align-items: center;
   text-decoration: none;
-  padding: 0.5rem 0.75rem 0.1rem;
+  padding: 0.3rem 0.75rem 0rem;
 }
 .navbar-logo {
   width: 115px;
