@@ -39,15 +39,16 @@ import AdImageFour from '../assets/images/header_trends_research.jpg';
 export const MAX_IPAD_WIDTH = 819; 
 
 export const CC_MAILS = [
-    // "rayapu00@rediffmail.com",
-    // "rayikaur@rediffmail.com",
-    "pranjitha2015@gmail.com"
+    "rayapu00@rediffmail.com",
+    "rayikaur@rediffmail.com",
+    // "pranjitha2015@gmail.com"
 ];
 
 export const TO_MAILS = [
+    "rayapurv59@gmail.com"
     // "rayapu00@rediffmail.com",
     // "rayikaur@rediffmail.com",
-    "vinayboi01@gmail.com"
+    // "vinayboi01@gmail.com"
 ];
 
 export const ADVERTISMENT_IMAGES = [
