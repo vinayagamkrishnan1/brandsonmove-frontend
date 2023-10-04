@@ -93,8 +93,6 @@
   .nav-links {
     padding: 0.35rem 0.35rem 0.1rem;
   }
-  .setup-meeting {
-  }
 }
 
 
@@ -111,8 +109,8 @@
     position: absolute;
     top: 0;
     left: 0;
-    transform: translate(15%, 30%);
-    width: 90px;
+    transform: translate(12%, 28%);
+    width: 85px;
   }
 
   .menu-icon {
@@ -134,7 +132,7 @@
     flex-direction: column;
     width: 100%;
     position: absolute;
-    top: 70px;
+    top: 65px;
     left: -100%;
     opacity: 1;
     padding-bottom: 50px;
@@ -149,9 +147,7 @@
   }
 
   .nav-links {
-    padding: 0.3rem;
-  }
-  .setup-meeting {
+    padding: 0.15rem;
   }
 
   .nav-links:hover {

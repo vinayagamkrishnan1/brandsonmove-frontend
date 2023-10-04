@@ -1,8 +1,4 @@
 .Footer {
-    // margin-top: auto;
-}
-
-.Footer {
     .footer-navigation {
         display: grid;
         color: #4B0082;
@@ -14,16 +10,24 @@
         background-size: cover;
         background-position: center;
         font-weight: 700;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
         font-size: var(--font-xxs);
         .footer-navigation-item {
 
             .footer-location-address, .footer-contact-info, .footer-contact-mail, .footer-share-options {
                 display: inline-flex;
                 padding: max(1vh, 0rem) 0.5rem;
+                .address-text {
+                    p{
+                        margin-bottom: 0;
+                    }
+                }
             }
             .footer-about-teams {
                 padding-left: 6rem;
+                padding-top: 0.5rem;
+                padding-right: 0.5rem;
+                padding-bottom: 0.5rem;
             }
             .footer-share-options {
                 text-align: center;
@@ -49,5 +53,20 @@
     }
     .footer-share-options, .only-home-page-content {
         padding-left: 3rem !important;
+    }
+    .footer-location-address {
+        .address-text {
+            p{
+                margin-bottom: 0;
+            }
+        }
+    }
+    .footer-navigation {
+        .footer-navigation-item {
+            .footer-icons {
+                width: 34px !important;
+                padding-right: 12px !important;
+            }
+        }
     }
 }
