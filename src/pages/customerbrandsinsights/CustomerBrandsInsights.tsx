@@ -111,7 +111,7 @@ function NewCustomerBrandsInsights() {
         // if(showFullViewImage) {
         //   setShowFullViewImage(flag => !flag);
         // }
-      }, 7000);
+      }, 10000);
       setSlideTimeOut(timer);
     } else {
       setSelectedStoryAndActiveSlide();
