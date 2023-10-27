@@ -95,8 +95,8 @@ function NewCustomerBrandsInsights() {
     window.addEventListener("resize", setDimension);
     _setSlidePreviewCount();
 
-    const autoPlayLeftInterval = setInterval(autoPlayLeft, 3000);
-    const autoPlayRightInterval = setInterval(autoPlayRight, 3000);
+    const autoPlayLeftInterval = setInterval(autoPlayLeft, 18000);
+    const autoPlayRightInterval = setInterval(autoPlayRight, 18000);
 
     if (showDefaultContent) {
       setSelectedItem(CONSUMERBRANDANDINSIGHTS_DEFAULTCONTENT);
@@ -111,7 +111,7 @@ function NewCustomerBrandsInsights() {
         // if(showFullViewImage) {
         //   setShowFullViewImage(flag => !flag);
         // }
-      }, 10000);
+      }, 12000);
       setSlideTimeOut(timer);
     } else {
       setSelectedStoryAndActiveSlide();
