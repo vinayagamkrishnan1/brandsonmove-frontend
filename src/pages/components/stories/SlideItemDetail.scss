@@ -1,5 +1,6 @@
 .info-animation-container {
-    padding: 1rem 3rem 1rem;
+    // padding: 1rem 3rem 1rem;
+    padding: 0.7rem 2rem 0rem;
     display: inline-block;
     width: 100%;
 }
@@ -8,10 +9,11 @@
     text-align: justify;
     font-size: clamp(1.3rem, 5vw + 1.7rem, 2rem);
     font-family: 'Bebas Neue';
+    margin-bottom: 0.3rem;
 }
 .default-story-paragraph {
     text-align: justify;
-    font-size: clamp(1rem, 5vw + 1.3rem, 1.4rem);
+    font-size: clamp(1rem, 5vw + 1.3rem, 1.3rem);
     margin-bottom: 0.5rem;
 }
 
@@ -19,11 +21,12 @@
     text-align: justify;
     font-size: var(--font-md);
     font-family: 'Bebas Neue';
+    margin-bottom: 0.3rem;
 }
 .story-paragraph {
     text-align: justify;
     // font-size: var(--font-xs);
-    font-size: clamp(0.8rem, 5vw + 0.9rem, 1.3rem);
+    font-size: clamp(0.8rem, 5vw + 0.9rem, 1.12rem);
     margin-bottom: 0.5rem;
     line-height: 1.35;
 }
@@ -73,10 +76,11 @@
 }
 
 .animation-image-container {
-    width: 45% !important;
+    // width: 45% !important;
+    width: 40% !important;
     float: right;
     margin-left: 2rem;
-    margin-bottom: 1rem;
+    margin-bottom: 0.7rem;
     border: 2px dashed #000;
     position: relative;
 }
