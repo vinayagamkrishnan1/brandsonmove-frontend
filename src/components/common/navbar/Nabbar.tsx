@@ -26,7 +26,7 @@ function Navbar() {
   const reloadPage = () => {
     setClick(false);
     navigate("/customerbrandsinsights");
-    window.location.reload();
+    // window.location.reload();
   }
 
   useEffect(() => {
@@ -52,6 +52,7 @@ function Navbar() {
             <Link
               to="/customerbrandsinsights"
               className="nav-links"
+              // onClick={closeMobileMenu}
               onClick={reloadPage}
             >
               CONSUMER & BRAND INSIGHTS
