@@ -1,6 +1,6 @@
 import "./Navbar.scss";
 import { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import IconAppLogo from "../../../assets/icons/applogo.png";
 import IconMenu from "../../../assets/icons/menu.svg";
 import IconCloseMenu from "../../../assets/icons/closemenu.svg";
@@ -8,6 +8,7 @@ import IconCloseMenu from "../../../assets/icons/closemenu.svg";
 function Navbar() {
 
   const location = useLocation();
+  let navigate = useNavigate();
   const [click, setClick] = useState(false);
   const [button, setButton] = useState(true);
 
@@ -21,6 +22,12 @@ function Navbar() {
       setButton(true);
     }
   };
+
+  const reloadPage = () => {
+    setClick(false);
+    navigate("/customerbrandsinsights");
+    window.location.reload();
+  }
 
   useEffect(() => {
     window.addEventListener("resize", showButton);
@@ -45,7 +52,7 @@ function Navbar() {
             <Link
               to="/customerbrandsinsights"
               className="nav-links"
-              onClick={closeMobileMenu}
+              onClick={reloadPage}
             >
               CONSUMER & BRAND INSIGHTS
             </Link>
