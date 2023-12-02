@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import "./SliteItem.scss";
 
 interface SlideItemProps {
@@ -9,6 +10,15 @@ const SlideItem: React.FC<SlideItemProps> = ({
     story,
     onClcikOfSlideItem
 }) => {
+
+    useEffect(() => {
+
+        if (story?.isSelected) {
+            console.log("STORY>>>", story);
+        }
+        
+    }, []);
+
     return (
         <button
             className="slide-item"

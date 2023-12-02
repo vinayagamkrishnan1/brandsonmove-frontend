@@ -15,7 +15,7 @@ function NewCustomerBrandsInsights() {
   const [playLeft, setPlayLeft] = useState<boolean>(true);
   const [slideCenterMode, setSlideCenterMode] = useState<boolean>(true);
   const [playRight, setPlayRight] = useState<boolean>(false);
-  const [customerBrandsAndInsights] = useState<any>(CONSUMERBRANDANDINSIGHTS);
+  const [customerBrandsAndInsights, setCustomerBrandsAndInsights] = useState<any>(CONSUMERBRANDANDINSIGHTS);
   const [showDefaultContent, setShowDefaultContent] = useState<boolean>(true);
   const [showFullViewImage, setShowFullViewImage] = useState<boolean>(true);
   const [selectedItem, setSelectedItem] = useState<any>({});
@@ -31,9 +31,9 @@ function NewCustomerBrandsInsights() {
     return customerBrandsAndInsights[index];
   };
 
-  const setSelectedStoryAndActiveSlide = async () => {
+  const setSelectedStoryAndActiveSlide = () => {
     const story: any = getSlideIntemBasedOnIndex(activeSlide);
-    await customerBrandsAndInsights.find((_story: any) => {
+    customerBrandsAndInsights.find((_story: any) => {
       if (_story.id === story.id) {
         _story.isSelected = true;
       } else {
@@ -44,7 +44,10 @@ function NewCustomerBrandsInsights() {
   };
 
   const handleSlideChange = (newSlideIndex: any) => {
-    setActiveSlide(newSlideIndex);
+    // setActiveSlide(newSlideIndex);
+    if (newSlideIndex !== activeSlide) {
+      setActiveSlide(newSlideIndex);
+    }
   };
 
   const goToPreviousSlide = () => {
@@ -117,6 +120,11 @@ function NewCustomerBrandsInsights() {
       setSelectedStoryAndActiveSlide();
     }
 
+    if(!showDefaultContent) {
+      setSlideTimeOut(null);
+      clearTimeout(slideTimeOut);
+    }
+
     if (playLeft) {
       clearInterval(autoPlayRightInterval);
     }
@@ -140,10 +148,15 @@ function NewCustomerBrandsInsights() {
       clearInterval(autoPlayLeftInterval);
       clearInterval(autoPlayRightInterval);
       setSlideTimeOut(null);
+      // setActiveSlide(0);
+      setSelectedItem({});
+      customerBrandsAndInsights.find((_story: any) => {
+        _story.isSelected = false;
+      });
       clearTimeout(slideTimeOut);
     };
 
-  }, [activeSlide, playLeft, playRight, 
+  }, [activeSlide, playLeft, playRight, showDefaultContent,
     selectedItem, slideCenterMode, slidePreviewCount]);
 
   const closeModal = () => {
@@ -187,6 +200,10 @@ function NewCustomerBrandsInsights() {
                         setPlayLeft(false);
                         setActiveSlide(story?.id);
                         sliderRef.current.slickGoTo(index);
+                        if(showDefaultContent) {
+                          setShowDefaultContent(false);
+                        }
+                        setSelectedStoryAndActiveSlide();
                       }}
                   />
                 </div>
